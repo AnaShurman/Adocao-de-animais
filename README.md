@@ -1,27 +1,33 @@
-# AdocaoDeAnimais
+# Adocao-de-animais
+Aplicação FRONT-END mockada para disponibilização de animais para adoção na parte administrativa de ongs de animais.  🐶🐱
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
+# Features:
+*Dashboard mostrando a quantidade de animais adotados e animais disponíveis;
+* Pagina com todos os animais disponíveis para adoção;
+* Pagina de Adição de novos animais;
+* Pagina de Edição e visualização dos dados do animal;
+* botão para deleção de animais;
+* Botão para sinalizar que o animal foi adotado e retirar ele da pagina de disponíveis para adoção;
+* Pagina do funcionário/administrador;
+  
+# Tecnologias utilizadas:
+* Angular/PrimeNg;
+* TypeScript;
+* Sass;
+  
+# Como executar:
+### Pré-requisitos
+Antes de começar, você precisará ter o seguinte instalado em seu sistema:
+* Node.js (https://nodejs.org) - Verifique a instalação executando *node -v* no terminal.
+* Angular CLI (https://cli.angular.io/) - Instale globalmente usando o comando *npm install -g @angular/cli*.
 
-## Development server
+  ### 1. Clonar o repositório
+  Primeiro, clone o repositório do aplicativo Angular do seu sistema de controle de versão preferido (por exemplo, GitHub).
+  * git clone [URL_DO_REPOSITORIO](https://github.com/AnaShurman/Adocao-de-animais)
+    
+ ### 2. Instalar as dependências
+* cd nome-do-repositorio
+* npm install
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+ ### 3. Executar a aplicação localmente
+* ng serve -o
