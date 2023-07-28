@@ -1,0 +1,43 @@
+<div class="grid">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <div class="card">
+            <p-card>
+                <div class="grid">
+                    <div class="col-2">
+                        <p-avatar image="../assets/image10.png" styleClass="mr-2" size="xlarge" shape="circle"></p-avatar>
+                        <p class="name">{{usuario}}</p>
+                        <p>{{profissao}}</p>
+
+                    </div>
+                    <div class="col-5">
+                        <p-divider layout="vertical"></p-divider>
+                    </div>
+                    <div class="col-5">
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon">
+                                <i class="pi pi-user"></i>
+                            </span>
+                            <input type="text" pInputText [(ngModel)]="sobrename" disabled="true"/>
+                        </div>
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon">
+                                <i class="pi pi-phone"></i>
+                            </span>
+                            <input type="text" pInputText [(ngModel)]="telefone" disabled="true"/>
+                        </div>
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon">
+                                <i class="pi pi-building"></i>
+                            </span>
+                            <input type="text" pInputText [(ngModel)]="endereco" disabled="true"/>
+                        </div>
+
+                    </div>
+                </div>
+            </p-card>
+        </div>
+    </div>
+    <div class="col-2"></div>
+
+</div>

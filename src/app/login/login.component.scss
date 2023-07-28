@@ -1,0 +1,44 @@
+.dog {
+    box-sizing: border-box;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    border-radius: 11px;
+
+}
+
+.grid {
+    display: flex;
+    justify-content: center;
+}
+
+.retangle {
+    display: flex;
+    box-sizing: border-box;
+    background: linear-gradient(90.67deg, #F3EBEB 0.55%, #FFFFFF 95.72%);
+    border: 1px solid #9DA1FC;
+    box-shadow: 23px 25px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 11px;
+}
+
+input {
+    margin-bottom: 5%;
+}
+
+.titulo {
+    font-family: 'otomanopee-one', sans-serif;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 100%;
+    color: #445BD8;
+}
+
+label {
+    font-family: 'Krub', sans-serif;
+    font-weight: 600;
+}
+
+.pata {
+    display: inline;
+    width: 50px;
+    height: 50px;
+}

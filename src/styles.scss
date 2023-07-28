@@ -1,0 +1,118 @@
+@import "../node_modules/primeng/resources/themes/saga-blue/theme.css";
+@import "../node_modules/primeng/resources/primeng.min.css";
+@import "../node_modules/primeng/resources/primeng.css";
+@import "../node_modules/primeicons/primeicons.css";
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import url('https://fonts.googleapis.com/css2?family=Krub:wght@500;600;700&display=swap');
+
+
+.p-menubar {
+    width: fit-content;
+    background-color:  transparent;
+    margin-bottom: 3%;
+}
+
+.btnMenu {
+    text-align: -webkit-center;
+}
+
+/* Set the text color for menubar */
+.p-menubar .p-menubar-root-list>.p-menuitem>.p-menuitem-link .p-menuitem-text {
+    color: #ffffff !important;
+}
+
+.p-menubar .p-menubar-root-list>.p-menuitem>.p-menuitem-link {
+    background-color: #445BD8;
+    margin-left: 5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    font-family: 'Krub', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+}
+.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover{
+    background-color: #2842d6;
+  }
+
+  .p-card{
+    height: 530px;
+  }
+
+  @function multiple-box-shadow($n) {
+    $value: "#{random(2000)}px #{random(2000)}px #FFF";
+    @for $i from 2 through $n {
+      $value: "#{$value}, #{random(2000)}px #{random(2000)}px #FFF";
+    }
+    @return unquote($value);
+  }
+  
+  $shadows-small: multiple-box-shadow(700);
+  $shadows-medium: multiple-box-shadow(200);
+  $shadows-big: multiple-box-shadow(100);
+  
+  body {
+    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+  
+    #stars {
+      width: 1px;
+      height: 1px;
+      background: transparent;
+      box-shadow: $shadows-small;
+      animation: animStar 50s linear infinite;
+  
+      &:after {
+        content: " ";
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        background: transparent;
+        box-shadow: $shadows-small;
+      }
+    }
+  
+    #stars2 {
+      width: 2px;
+      height: 2px;
+      background: transparent;
+      box-shadow: $shadows-medium;
+      animation: animStar 100s linear infinite;
+  
+      &:after {
+        content: " ";
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background: transparent;
+        box-shadow: $shadows-medium;
+      }
+    }
+  
+    #stars3 {
+      width: 3px;
+      height: 3px;
+      background: transparent;
+      box-shadow: $shadows-big;
+      animation: animStar 150s linear infinite;
+  
+      &:after {
+        content: " ";
+        position: absolute;
+        width: 3px;
+        height: 3px;
+        background: transparent;
+        box-shadow: $shadows-big;
+      }
+    }
+  
+  
+  }
+  
+  @keyframes animStar {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-2000px);
+    }
+  }

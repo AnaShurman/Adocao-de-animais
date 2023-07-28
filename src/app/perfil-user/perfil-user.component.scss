@@ -1,0 +1,46 @@
+
+
+.card{
+    width: 600px;
+    height: 530px;
+}
+
+.grid{
+    justify-content: center;
+    display: flex;
+}
+
+.p-inputgroup{
+    margin-bottom: 3%;
+}
+input{
+    font-weight: bold;
+    color: black;
+}
+.col-2{
+    display: grid;
+    /* align-content: stretch; */
+    justify-items: center;
+
+}
+.col-8{
+    text-align: -webkit-center;
+}
+p{
+    font-family: 'Krub', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 100%;
+    color: #000000;
+}
+ img{
+    width: 300px;
+}
+
+.name{
+    font-family: 'otomanopee-one', sans-serif;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 100%;
+    color: #445BD8;
+}

@@ -1,0 +1,21 @@
+<div class="grid">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <div class="card flex justify-content-center">
+            <p-card header="Graficos de adoção">
+                <div class="charts">
+                    <div class="card flex justify-content-center">
+                        <h2>Gatos</h2>
+                        <p-chart type="doughnut" [data]="data" [options]="options"></p-chart>
+                    </div>
+                    <div class="card flex justify-content-center">
+                        <h2>Cães</h2>
+                        <p-chart type="doughnut" [data]="data" [options]="options"></p-chart>
+                    </div>
+                </div>
+            </p-card>
+        </div>
+    </div>
+    <div class="col-2"></div>
+
+</div>

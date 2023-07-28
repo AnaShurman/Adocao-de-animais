@@ -1,0 +1,8 @@
+<div>
+<div style="padding-bottom: 3%;">
+    <img class="logo" src="../../assets/logo.png" alt="">
+</div>
+<app-menu-bar *ngIf="this.path === true"></app-menu-bar>
+<router-outlet></router-outlet>
+<app-footer *ngIf="this.path === true"></app-footer>
+</div>

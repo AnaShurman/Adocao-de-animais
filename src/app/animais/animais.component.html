@@ -1,0 +1,133 @@
+<div class="card">
+    <p-dataView #dv [value]="animalInformation" [layout]="layout">
+        <ng-template pTemplate="header">
+            <div class="flex justify-content-end">
+                <p-button icon="pi pi-trash" (click)="deletePage(checked)" style="margin-right: 1%;"
+                    styleClass="p-button-rounded p-button-danger p-button-outlined"></p-button>
+                <p-button icon="pi pi-plus" (click)="newAnimal(animalInformation)" style="margin-right: 1%;"
+                    styleClass="p-button-rounded p-button-info p-button-outlined"></p-button>
+                <p-button icon="pi pi-heart" (click)="adotadoPage(checked)"
+                    styleClass="p-button-rounded p-button-help p-button-outlined"></p-button>
+            </div>
+        </ng-template>
+        <ng-template let-animalInformation pTemplate="gridItem">
+            <div class="col-12 sm:col-6 lg:col-12 xl:col-4 p-2" style="width: 20%;">
+                <div class="p-4 border-1 surface-border surface-card border-round">
+                    <div class="flex flex-wrap align-items-center justify-content-between gap-2">
+                        <span class="flex align-items-center gap-2">
+                            <p-checkbox [binary]="true" [value]="animalInformation.id" (onChange)="checkboxDelete(animalInformation.id)" ></p-checkbox>
+                        </span>
+                        <p-tag *ngIf="animalInformation.sexo === 'Femea'" [value]="animalInformation.sexo" severity="danger"></p-tag>
+                        <p-tag *ngIf="animalInformation.sexo === 'Macho'"  [value]="animalInformation.sexo"></p-tag>
+                    </div>
+                    <div class="flex flex-column align-items-center gap-3 py-5">
+                        <img class="w-9 shadow-2 border-round" [src]="'../../assets/' + animalInformation.image"
+                            [alt]="animalInformation.name" />
+                        <div class="text-2xl font-bold">{{ animalInformation.name }}</div>
+                    </div>
+                    <div class="flex align-items-center justify-content-between">
+                        <button pButton icon="pi pi-file-edit" class="p-button-rounded edit" (click)="editPage(animalInformation)"
+                            style="background-color: #FFBC42;
+                        "></button>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </p-dataView>
+
+    <p-toast></p-toast>
+    <p-dialog *ngIf=" visible" [(visible)]="visible" [style]="{ width: '200vw', 'max-height': '99%'}" [modal]="true"
+        [draggable]="false" [resizable]="false">
+        <div class="grid p-fluid" style="padding: 1%;">
+            <div class="col-4">
+                <div class="row">
+                    <div class="col-8">
+                        <label *ngIf="add === true" class="btn btn-default p-0">
+                            <input type="file" accept="image/*" (change)="selectFile($event)" />
+                        </label>
+                    </div>
+                </div>
+                <div class="col-5 flex">
+                    <p-image *ngIf="preview !== undefined" [src]="preview" alt="preview" width="350px" [preview]="true"></p-image>
+                </div>
+                <div class="col-5 flex">
+                    <p-image *ngIf="add === false" [src]="imagem" alt="Image" width="350px" [preview]="true"></p-image>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="flex justify-content-end">
+                    <button *ngIf="add === false" pButton icon="pi pi-file-edit" class="p-button-rounded edit" (click)="editMode()"
+                        style="background-color: #FFBC42;margin-right: 1%;"></button>
+                    <button *ngIf="editOn" pButton icon="pi pi-check" class="p-button-rounded edit" (click)="Save()"
+                        style="background-color: #1CD119;margin-right: 1%;"></button>
+                </div>
+                <div class="formgrid grid" style="justify-content: flex-start;">
+                    <div class=" field col col-fixed" style="width:300px; ">
+                        <label for="name">name:</label>
+                        <input id="name" type="text" [(ngModel)]="animaisData.name" disabled="{{viewMode}}"
+                            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+                    </div>
+                    <div class=" field col col-fixed" style="width:100px">
+                        <label for="Idade">Idade:</label>
+                        <input id="Idade" type="text" [(ngModel)]="animaisData.idade" disabled="{{viewMode}}"
+                            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+                    </div>
+                </div>
+                <div *ngIf="editOn; else view" class="p-fluid">
+                    <h5>Sexo:</h5>
+                    <div class="formgroup-inline">
+                        <div class="field-radiobutton">
+                            <label for="city7">Macho</label>
+                            <p-radioButton value="Macho" [(ngModel)]="animaisData.sexo"></p-radioButton>
+                        </div>
+                        <div class="field-radiobutton">
+                            <label for="city8">Femea</label>
+                            <p-radioButton value="Femea" [(ngModel)]="animaisData.sexo"></p-radioButton>
+                        </div>
+                    </div>
+                    <h5>Porte:</h5>
+                    <div class="formgroup-inline">
+                        <div class="field-radiobutton">
+                            <label for="city7">Pequeno</label>
+                            <p-radioButton value="Pequeno" [(ngModel)]="animaisData.porte"></p-radioButton>
+                        </div>
+                        <div class="field-radiobutton">
+                            <label for="city8">Medio</label>
+                            <p-radioButton value="Medio" [(ngModel)]="animaisData.porte"></p-radioButton>
+                        </div>
+                        <div class="field-radiobutton">
+                            <label for="city8">Grande</label>
+                            <p-radioButton value="Grande" [(ngModel)]="animaisData.porte"></p-radioButton>
+                        </div>
+                    </div>
+                </div>
+                <ng-template #view>
+                    <h5>Sexo:</h5>
+                    <div class="formgroup-inline">
+                        <div class="field-radiobutton">
+                            <label for="city7">{{animaisData.sexo}}</label>
+                            <p-radioButton value="{{animaisData.sexo}}" [(ngModel)]="animaisData.sexo"></p-radioButton>
+                        </div>
+                    </div>
+                    <h5>Porte:</h5>
+                    <div class="formgroup-inline">
+                        <div class="field-radiobutton">
+                            <label for="city7">{{animaisData.porte}}</label>
+                            <p-radioButton value="{{animaisData.porte}}"
+                                [(ngModel)]="animaisData.porte"></p-radioButton>
+                        </div>
+                    </div>
+                </ng-template>
+                <div class="field">
+                    <label for="Descrição">Descrição:</label>
+                    <textarea rows="5" cols="30" pInputTextarea disabled="{{viewMode}}"
+                        [(ngModel)]="animaisData.descricao"
+                        class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"></textarea>
+                </div>
+            </div>
+            <div class="col-2"></div>
+        </div>
+    </p-dialog>
+
+<p-confirmDialog [style]="{width: '50vw'}" ></p-confirmDialog>
+</div>
