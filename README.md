@@ -21,13 +21,13 @@ Antes de começar, você precisará ter o seguinte instalado em seu sistema:
 * Node.js (https://nodejs.org) - Verifique a instalação executando *node -v* no terminal.
 * Angular CLI (https://cli.angular.io/) - Instale globalmente usando o comando *npm install -g @angular/cli*.
 
-  ### 1. Clonar o repositório
-  Primeiro, clone o repositório do aplicativo Angular do seu sistema de controle de versão preferido (por exemplo, GitHub).
-  * git clone [URL_DO_REPOSITORIO](https://github.com/AnaShurman/Adocao-de-animais)
+### 1. Clonar o repositório
+Primeiro, clone o repositório do aplicativo Angular do seu sistema de controle de versão preferido (por exemplo, GitHub).
+* git clone [URL_DO_REPOSITORIO](https://github.com/AnaShurman/Adocao-de-animais)
     
- ### 2. Instalar as dependências
+### 2. Instalar as dependências
 * cd nome-do-repositorio
 * npm install
 
- ### 3. Executar a aplicação localmente
+### 3. Executar a aplicação localmente
 * ng serve -o
