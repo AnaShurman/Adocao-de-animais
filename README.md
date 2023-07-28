@@ -1,5 +1,6 @@
 # Adocao-de-animais
 Aplicação FRONT-END mockada para disponibilização de animais para adoção na parte administrativa de ongs de animais.  🐶🐱
+![image](https://github.com/AnaShurman/Adocao-de-animais/assets/79587495/e43d24b1-94ea-46c8-8771-a76e063eaaa9)
 
 # Features:
 *Dashboard mostrando a quantidade de animais adotados e animais disponíveis;
